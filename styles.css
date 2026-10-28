@@ -1,0 +1,501 @@
+
+:root {
+    --color-bg: #16241e;
+    --color-card: #fbf7ef;
+    --color-ink: #1e2a22;
+    --color-muted: #5b6b60;
+    --color-cream: #f3ead2;
+    --color-gold: #c89b3c;
+    --color-gold-soft: rgba(200, 155, 60, 0.35);
+
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+    --radius-card: 18px;
+    --shadow-card: 0 20px 45px rgba(10, 16, 13, 0.35);
+
+    --content-width: 640px;
+}
+
+/* ============================================
+   全局重置 Global reset
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    background-image: radial-gradient(circle at top, #1d2f27, var(--color-bg) 60%);
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+}
+
+/* ============================================
+   顶部导航 Site header
+   
+   ============================================ */
+.site-header {
+    border-bottom: 1px solid var(--color-gold-soft);
+}
+
+.header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "logo nav actions";
+    align-items: center;
+    gap: 1rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+/* Logo */
+.logo {
+    grid-area: logo;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--color-gold);
+}
+
+.logo-mark {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-cream);
+    white-space: nowrap;
+}
+
+.nav {
+    grid-area: nav;
+    justify-self: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-cream);
+    padding-bottom: 4px;
+    white-space: nowrap;
+}
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.nav-list a:hover::after,
+.nav-list a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+/* 操作按钮 Action buttons */
+.header-actions {
+    grid-area: actions;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+    padding: 0.5rem 1.15rem;
+    background: var(--color-gold);
+    color: var(--color-ink);
+}
+
+.btn-primary:hover {
+    background: #dcae4d;
+}
+
+.btn-ghost {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-gold-soft);
+    color: var(--color-cream);
+}
+
+.btn-ghost svg {
+    width: 17px;
+    height: 17px;
+}
+
+.btn-ghost:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+/* ============================================
+   主卡片 Main content card
+   ============================================ */
+.card {
+    width: min(90%, var(--content-width));
+    margin: 4rem auto;
+    padding: 2.75rem 3rem;
+    background-color: var(--color-card);
+    color: var(--color-ink);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+}
+
+.card h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.3rem);
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+}
+
+.card h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.6rem 0 0.6rem;
+}
+
+.tagline {
+    color: #8a6a1f;
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+
+.lead {
+    font-size: 1.05rem;
+    color: var(--color-muted);
+    margin: 0 0 1.8rem;
+}
+
+.card p a {
+    color: #8a6a1f;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.card p a:hover {
+    color: var(--color-gold);
+}
+
+/* ============================================
+   主图 / 相框效果 Hero image frame
+   ============================================ */
+.hero-frame {
+    display: inline-block;
+    margin: 0.5rem 0 0.5rem;
+    padding: 10px;
+    background: var(--color-card);
+    border: 1px solid var(--color-gold);
+    border-radius: 10px;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-frame:hover,
+.hero-frame:focus-visible {
+    transform: rotate(0deg);
+}
+
+.main-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* ============================================
+   分隔线 Divider between hero and quotes section
+   ============================================ */
+.divider {
+    height: 1px;
+    margin: 2rem auto 0;
+    width: 60%;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
+
+/* ============================================
+   页脚 Footer
+   ============================================ */
+.site-footer {
+    border-top: 1px solid var(--color-gold-soft);
+    padding: 3.5rem 1.5rem 1.5rem;
+    color: #bdc7bf;
+    background: linear-gradient(180deg, rgba(10, 16, 13, 0.08), rgba(10, 16, 13, 0.28));
+}
+
+.footer-inner {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 330px);
+    gap: 2.5rem 4rem;
+}
+
+.footer-brand h2 {
+    margin: 0.35rem 0 0.5rem;
+    color: var(--color-cream);
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 1.2rem + 1vw, 2.1rem);
+    font-weight: 600;
+}
+
+.footer-brand p {
+    max-width: 390px;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-kicker {
+    color: var(--color-gold);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.footer-email {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-self: center;
+    padding: 1.15rem 3rem 1.15rem 1.25rem;
+    border: 1px solid var(--color-gold-soft);
+    border-radius: 12px;
+    color: var(--color-cream);
+    text-decoration: none;
+    background: rgba(251, 247, 239, 0.04);
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-email:hover {
+    border-color: var(--color-gold);
+    background: rgba(200, 155, 60, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-email-label {
+    color: var(--color-gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer-email-address {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.footer-email-arrow {
+    position: absolute;
+    top: 1rem;
+    right: 1.1rem;
+    color: var(--color-gold);
+    font-size: 1.25rem;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(200, 155, 60, 0.18);
+    font-size: 0.78rem;
+}
+
+/* Simple text pages and image caption */
+.reading-text,
+.source-list {
+    text-align: left;
+}
+
+.reading-text p {
+    margin: 0 0 1.25rem;
+}
+
+.source-list {
+    padding-left: 1.25rem;
+}
+
+.source-list a {
+    color: #8a6a1f;
+    text-underline-offset: 3px;
+}
+
+.image-caption,
+.source-note {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+/* ============================================
+   项目列表 Project idea list (project.html)
+   ============================================ */
+.card dl {
+    text-align: left;
+    margin: 1.6rem 0 0;
+}
+
+.card dt {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #8a6a1f;
+    margin-top: 1.4rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--color-gold);
+}
+
+.card dt:first-child {
+    margin-top: 0;
+}
+
+.card dd {
+    margin: 0.3rem 0 0;
+    padding-left: 0.9rem;
+    color: var(--color-ink);
+}
+
+/* ============================================
+   语录列表 Quotes list (quotes.html)
+   ============================================ */
+.quote-list {
+    list-style: none;
+    margin: 1.6rem 0 0;
+    padding: 0;
+    text-align: left;
+}
+
+.quote-list li {
+    padding: 1.3rem 0;
+    border-top: 1px solid var(--color-gold-soft);
+}
+
+.quote-list li:first-child {
+    border-top: none;
+    padding-top: 0.4rem;
+}
+
+.quote-list blockquote {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--color-ink);
+}
+
+.quote-theme {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+/* ============================================
+   动效偏好 Respect reduced-motion preference
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .hero-frame,
+    .nav-list a::after {
+        transition: none;
+    }
+}
+
+/* ============================================
+   响应式 Responsive breakpoints
+   ============================================ */
+@media (max-width: 720px) {
+    .header-inner {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "logo actions"
+            "nav   nav";
+        row-gap: 0.8rem;
+    }
+
+    .nav-list {
+        gap: 1.2rem 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 2rem 1.5rem;
+        margin: 2.5rem auto;
+    }
+
+    .site-footer {
+        padding-top: 2.5rem;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .footer-email {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text {
+        display: none;
+    }
+}
