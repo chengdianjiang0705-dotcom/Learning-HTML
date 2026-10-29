@@ -4,7 +4,8 @@ const pages = [
     { file: 'index.html', label: 'Home' },
     { file: 'story.html', label: 'Story' },
     { file: 'quotes.html', label: 'Quotes' },
-    { file: 'project.html', label: 'About' }
+    { file: 'project.html', label: 'Project' },
+    { file: 'machine.html', label: 'Machine' }
 ];
 let navigationLinks = '';
 

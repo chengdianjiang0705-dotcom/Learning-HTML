@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine — Nezha Story Notes</title>
+    <meta name="description" content="Try to give Nezha a day off: a self-closing switch and a playful runaway-button game.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <meta property="og:title" content="Machine — Nezha Story Notes">
+    <meta property="og:description" content="Try to give Nezha a day off: a self-closing switch and a playful runaway-button game.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chengdianjiang0705-dotcom.github.io/Learning-HTML/machine.html">
+    <meta property="og:image" content="https://chengdianjiang0705-dotcom.github.io/Learning-HTML/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Nezha Story Notes, a beginner website by Diancheng Jiang">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+    <script src="nav.js" defer></script>
+    <script src="machine.js" defer></script>
+</head>
+<body>
+    <header class="site-header" id="site-header"></header>
+    <main class="card">
+        <h1>Nezha refuses a day off.</h1>
+        <p class="lead">Saving the world? Easy. Getting this child to take a nap? Good luck.</p>
+
+        <section class="machine-section" aria-labelledby="toy-title">
+            <h2 id="toy-title">A completely useless day-off machine</h2>
+            <p>Turn on his day off. He has other plans.</p>
+            <div class="toy-box" id="toy-box" aria-hidden="true">
+                <div class="toy-lid"></div>
+                <div class="toy-hand">✋</div>
+                <span class="toy-label">DEPARTMENT OF DOING NOTHING</span>
+            </div>
+            <button class="day-off-switch" id="day-off-switch" type="button" role="switch" aria-checked="false" aria-label="Give Nezha a day off" disabled>
+                <span class="switch-track" aria-hidden="true"><span></span></span>
+                <span>Give Nezha a day off</span>
+            </button>
+            <p class="machine-status" id="toy-status" aria-live="polite">Switch on a little peace and quiet.</p>
+        </section>
+
+        <section class="machine-section" aria-labelledby="game-title">
+            <h2 id="game-title">Please. Just. Take. A. Nap.</h2>
+            <p>Catch the button five times to convince Nezha to rest. You can also focus the button and press Enter or Space. It stays still until you press it.</p>
+            <p class="catch-counter" id="catch-counter">Caught: 0 / 5</p>
+            <div class="rest-arena" id="rest-arena">
+                <div class="nezha-cartoon" aria-hidden="true">
+                    <span class="sleep-letters">Z z z</span>
+                    <div class="hair-bun bun-left"></div>
+                    <div class="hair-bun bun-right"></div>
+                    <div class="nezha-face"><span class="forehead-mark">◆</span><span class="face-eyes">• •</span><span class="face-mouth">⌣</span></div>
+                    <div class="red-scarf"></div>
+                    <div class="little-body"></div>
+                    <span class="fire-wheel wheel-left">✹</span><span class="fire-wheel wheel-right">✹</span>
+                </div>
+                <button class="action-button rest-button" id="rest-button" type="button" disabled>Let Nezha rest</button>
+            </div>
+            <p class="machine-status" id="game-status" aria-live="polite">He says he is not tired. His Wind Fire Wheels disagree.</p>
+            <button class="action-button secondary-button" id="restart-game" type="button" hidden>Try again</button>
+        </section>
+        <noscript><p>Enable JavaScript to use the switch and play the game. The story and quotation list can still be read without it.</p></noscript>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
