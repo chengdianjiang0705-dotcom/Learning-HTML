@@ -1,0 +1,8 @@
+{
+  "title": "Learning HTML",
+  "project_name": "Nezha Story Notes",
+  "short_description": "A simple guide to Nezha, with a short story, film quotes, and notes about the website.",
+  "long_description": "Nezha Story Notes is a simple introduction to Nezha, a character from Chinese mythology. It brings together a short story summary and memorable film quotes about courage, family, and choosing your own path.\n\nThe website is for readers who are curious about Nezha and want an easy place to begin. It uses short English passages rather than a detailed account of every legend or film. The Quotes page keeps the original four film entries and adds eleven English excerpts from the older novel, with speakers, chapter numbers, and source links.\n\nThe five pages are Home, Story, Quotes, Project, and Machine. HTML structures the content, CSS provides the colours and layout, and shared JavaScript adds the same navigation and footer to every page. Project records five website ideas, Quotes has a random quotation hero, and Machine contains a self-closing switch and a five-catch button game. The site uses no accounts or extra libraries.\n\nThe project was created by Diancheng Jiang as a beginner web exercise. AI assisted with the wording and code revision. The portrait was supplied with the original exercise files; its original creator and reuse terms have not been identified.",
+  "github_repository": "https://github.com/chengdianjiang0705-dotcom/Learning-HTML",
+  "live_site": "https://chengdianjiang0705-dotcom.github.io/Learning-HTML/"
+}
